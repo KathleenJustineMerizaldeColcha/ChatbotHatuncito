@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const dfff = require('dialogflow-fulfillment');
 
-app.get('/hacker', (req, res) => {
+app.get('/hatunbot', (req, res) => {
   res.send('ESTE ES EL SERVIDOR PARA EL CHATBOT HATUNCITO');
 });
 
