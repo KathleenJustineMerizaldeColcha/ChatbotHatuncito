@@ -3,7 +3,7 @@ const app = express();
 const dfff = require('dialogflow-fulfillment');
 
 app.get('/hatuncitobot', (req, res) => {
-  res.send('ESTE ES EL SERVIDOR PARA EL CHATBOT HATUNCITO');
+  res.send('Este es el servidor para el chatbot Hatuncito');
 });
 
 app.post("/", express.json(), (req, res) => {
