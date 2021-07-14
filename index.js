@@ -6,7 +6,7 @@ app.get('/hatuncitobot', (req, res) => {
   res.send('Este es el servidor para el chatbot Hatuncito');
 });
 
-app.post("/hatuncitobot", express.json(), (req, res) => {
+app.post("/", express.json(), (req, res) => {
   const agent = new dfff.WebhookClient({
     request: req,
     response: res
