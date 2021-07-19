@@ -1261,13 +1261,26 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
 
   }
-/*
+
   function TerminarConversacion(agent) {
-    var payloadData = {
-
-
-
-
+    var payloadData = 
+      {
+        "richContent": [
+          [
+            {
+              "rawUrl": "https://i.ibb.co/23VwmQP/se-hatun.jpg",
+              "type": "image",
+              "accessibilityText": "se-hatun"
+            },
+            {
+              "subtitle": "",
+              "title": "Gracias por visitar nuestra página web, te esperamos en Hatun Yanuna, la mejor escuela de panadería y pastelería  del centro del país.",
+              "type": "info"
+            }
+          ]
+        ]
+      
+      
 
     }
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
@@ -1281,7 +1294,7 @@ app.post("/", express.json(), (req, res) => {
 
 
   
-  //Mapeo de intenciones*/
+  //Mapeo de intenciones
 
   let intentMap = new Map();
   intentMap.set('InformacionGeneral', InformacionGeneral);
@@ -1306,7 +1319,7 @@ app.post("/", express.json(), (req, res) => {
 
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
   intentMap.set('NoMostrarMenuOpciones', NoMostrarMenuPrincipal);
-  /*intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);*/
+  intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);
   
 
   agent.handleRequest(intentMap);
