@@ -1225,8 +1225,8 @@ app.post("/", express.json(), (req, res) => {
         [
           {
             "type": "image",
-            "rawUrl": "https://i.ibb.co/VxrJLvt/no-Mostrar-Menu.jpg",
-            "accessibilityText": "no-Mostrar-Menu"
+            "rawUrl": "https://i.ibb.co/7zzJkF5/no-menu.jpg",
+            "accessibilityText": "no-menu"
           },
           {
             "type": "info",
