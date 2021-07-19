@@ -1224,16 +1224,38 @@ app.post("/", express.json(), (req, res) => {
       "richContent": [
         [
           {
-            "type": "image",
-            "rawUrl": "https://i.ibb.co/7zzJkF5/no-menu.jpg",
-            "accessibilityText": "no-menu"
-          },
+            "type": "description",
+            "title": "¿Estas segur@ de terminar la conversación?",
+            "text": [
+            ]
+
+          }
+        ],
+        [
           {
-            "type": "info",
-            "title": "¡¡¡Entendido, esta conversación finalizará en este momento, Hasta pronto!!!",
-            "subtitle": "",
-          },
+            "type": "chips",
+            "options": [
+              {
+                "text": "Si",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/hK8j82d/SI.png"
+                  }
+                }
+
+              },
+              {
+                "text": "No",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/Ph6jhs0/no.png"
+                  }
+                }
+              }
+            ]
+          }
         ]
+
       ]
     }
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
