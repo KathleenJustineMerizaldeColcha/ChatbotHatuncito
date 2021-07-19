@@ -1261,9 +1261,27 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
 
   }
+/*
+  function TerminarConversacion(agent) {
+    var payloadData = {
+
+
+
+
+
+    }
+    agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
+  }
+
+
+
+
+
+
+
 
   
-  //Mapeo de intenciones
+  //Mapeo de intenciones*/
 
   let intentMap = new Map();
   intentMap.set('InformacionGeneral', InformacionGeneral);
@@ -1288,7 +1306,7 @@ app.post("/", express.json(), (req, res) => {
 
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
   intentMap.set('NoMostrarMenuOpciones', NoMostrarMenuPrincipal);
-
+  /*intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);*/
   
 
   agent.handleRequest(intentMap);
