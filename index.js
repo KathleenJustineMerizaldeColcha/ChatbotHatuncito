@@ -1261,7 +1261,7 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
 
   }
-
+/*
   function TerminarConversacion(agent) {
     var payloadData = 
       {
@@ -1286,7 +1286,7 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
   }
 
-//
+*/
 //Opción menu opciones
 function ReiniciarConversacion(agent) {
 
@@ -1400,8 +1400,9 @@ function ReiniciarConversacion(agent) {
   intentMap.set('ConsultaInformacionContacto', InformacionContacto);
 
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
+
   intentMap.set('ConsultaFinalizacionConversacion', ConsultaFinConversacion);
-  intentMap.set('ConsultaFinalizacionConversacion - yes', TerminarConversacion);
+  //intentMap.set('ConsultaFinalizacionConversacion - yes', TerminarConversacion);
   intentMap.set('ConsultaFinalizacionConversacion - no', ReiniciarConversacion);
 
   agent.handleRequest(intentMap);
