@@ -1286,13 +1286,95 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
   }
 
+//
+//Opción menu opciones
+function ReiniciarConversacion(agent) {
 
+  var payloadData = {
+    "richContent": [
 
+      [
+        {
+          "type": "description",
+          "title": "Selecciona la opción de consulta que te interesa:",
+          "text": [
+          ]
+        }
+      ],
+      [
+        {
+          "type": "chips",
+          "options": [
+            {
+              "text": "Cursos Ofertados",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/yNYjnSW/icono-cursos.png"
 
+                }
+              }
+            },
+            {
+              "text": "Contenidos de aprendizaje",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/87RRscW/aprendizaje.png"
 
+                }
+              }
+            },
+            {
+              "text": "Requisitos",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/Q8687jJ/icono-requisitos.png"
 
+                }
+              }
+            },
+            {
+              "text": "Costos",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/HnRnpzj/icono-costo.png"
 
+                }
+              }
 
+            },
+            {
+              "text": "Duración",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/tmTqdyP/icono-duracion.png"
+                }
+              }
+            },
+            {
+              "text": "Dirección",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/XbfKFw3/icono-direccion.png"
+                }
+              }
+
+            },
+            {
+              "text": "Info de contacto",
+              "image": {
+                "src": {
+                  "rawUrl": "https://i.ibb.co/bbtmt4y/icono-info.png"
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    ]
+  }
+  agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
+}
   
   //Mapeo de intenciones
 
@@ -1320,7 +1402,7 @@ app.post("/", express.json(), (req, res) => {
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
   intentMap.set('NoMostrarMenuOpciones', NoMostrarMenuPrincipal);
   intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);
-  
+  intentMap.set('NoMostrarMenuOpciones - no', ReiniciarConversacion);
 
   agent.handleRequest(intentMap);
 
