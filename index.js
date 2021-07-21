@@ -1218,14 +1218,14 @@ app.post("/", express.json(), (req, res) => {
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
   }
 
-  function NoMostrarMenuPrincipal(agent) {
+  function ConsultaFinConversacion(agent) {
     var payloadData = {
 
       "richContent": [
         [
           {
             "type": "description",
-            "title": "¿Estas segur@ de terminar la conversación?",
+            "title": "¿Estas segur@ de terminar está conversación?",
             "text": [
             ]
 
@@ -1400,7 +1400,7 @@ function ReiniciarConversacion(agent) {
   intentMap.set('ConsultaInformacionContacto', InformacionContacto);
 
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
-  intentMap.set('NoMostrarMenuOpciones', NoMostrarMenuPrincipal);
+  intentMap.set('ConsultaFinalizacionConversacion', ConsultaFinConversacion);
   intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);
   intentMap.set('NoMostrarMenuOpciones - no', ReiniciarConversacion);
 
