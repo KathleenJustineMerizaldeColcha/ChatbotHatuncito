@@ -1401,8 +1401,8 @@ function ReiniciarConversacion(agent) {
 
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
   intentMap.set('ConsultaFinalizacionConversacion', ConsultaFinConversacion);
-  intentMap.set('NoMostrarMenuOpciones - yes', TerminarConversacion);
-  intentMap.set('NoMostrarMenuOpciones - no', ReiniciarConversacion);
+  intentMap.set('ConsultaFinalizarConversacion - yes', TerminarConversacion);
+  intentMap.set('ConsultaFinalizarConversacion - no', ReiniciarConversacion);
 
   agent.handleRequest(intentMap);
 
