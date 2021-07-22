@@ -1243,8 +1243,9 @@ app.post("/", express.json(), (req, res) => {
                   "src": {
                     "rawUrl": "https://i.ibb.co/hK8j82d/SI.png",
                   }
-                  },
-              
+                  }
+                },
+              {
                 "text": "No",
                 "image": {
                   "src": {
