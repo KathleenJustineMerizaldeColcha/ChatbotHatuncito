@@ -1224,14 +1224,16 @@ app.post("/", express.json(), (req, res) => {
       "richContent": [
         [
           {
-            "type": "description",
-            "title": "¿Estas segur@ de terminar está conversación?",
-            "text": [
-            ]
+            "type": "image",
+            "rawUrl": "https://i.ibb.co/xYDzn6h/hatuncito.jpg",
+            "accessibilityText": "hatuncito"
+          },
+          {
+            "type": "info",
+            "title": "¿Deseas terminar esta conversación con Hatuncito?",
+            "subtitle": ""
 
-          }
-        ],
-        [
+          },
           {
             "type": "chips",
             "options": [
@@ -1239,16 +1241,127 @@ app.post("/", express.json(), (req, res) => {
                 "text": "Si",
                 "image": {
                   "src": {
-                    "rawUrl": "https://i.ibb.co/hK8j82d/SI.png"
+                    "rawUrl": "https://i.ibb.co/hK8j82d/SI.png",
+                  }
+                  },
+              
+                "text": "No",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/Ph6jhs0/no.png",
+                  }
+                }
+              },
+            ]
+          }
+        ]
+      ]
+    }
+
+    agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
+
+  }
+
+  function TerminarConversacion(agent) {
+    var payloadData =
+    {
+      "richContent": [
+        [
+          {
+            "rawUrl": "https://i.ibb.co/23VwmQP/se-hatun.jpg",
+            "type": "image",
+            "accessibilityText": "se-hatun"
+          },
+          {
+            "subtitle": "",
+            "title": "Gracias por visitar nuestra página web, te esperamos en Hatun Yanuna, la mejor escuela de panadería y pastelería  del centro del país.",
+            "type": "info"
+          }
+        ]
+      ]
+
+    }
+    agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
+  }
+
+
+  //Opción menu opciones
+  function ReiniciarConversacion(agent) {
+
+    var payloadData = {
+      "richContent": [
+
+        [
+          {
+            "type": "description",
+            "title": "Selecciona la opción de consulta que te interesa:",
+            "text": [
+            ]
+          }
+        ],
+        [
+          {
+            "type": "chips",
+            "options": [
+              {
+                "text": "Cursos Ofertados",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/yNYjnSW/icono-cursos.png"
+
+                  }
+                }
+              },
+              {
+                "text": "Contenidos de aprendizaje",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/87RRscW/aprendizaje.png"
+
+                  }
+                }
+              },
+              {
+                "text": "Requisitos",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/Q8687jJ/icono-requisitos.png"
+
+                  }
+                }
+              },
+              {
+                "text": "Costos",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/HnRnpzj/icono-costo.png"
+
                   }
                 }
 
               },
               {
-                "text": "No",
+                "text": "Duración",
                 "image": {
                   "src": {
-                    "rawUrl": "https://i.ibb.co/Ph6jhs0/no.png"
+                    "rawUrl": "https://i.ibb.co/tmTqdyP/icono-duracion.png"
+                  }
+                }
+              },
+              {
+                "text": "Dirección",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/XbfKFw3/icono-direccion.png"
+                  }
+                }
+
+              },
+              {
+                "text": "Info de contacto",
+                "image": {
+                  "src": {
+                    "rawUrl": "https://i.ibb.co/bbtmt4y/icono-info.png"
                   }
                 }
               }
@@ -1259,123 +1372,8 @@ app.post("/", express.json(), (req, res) => {
       ]
     }
     agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
-
-  }
-/*
-  function TerminarConversacion(agent) {
-    var payloadData = 
-      {
-        "richContent": [
-          [
-            {
-              "rawUrl": "https://i.ibb.co/23VwmQP/se-hatun.jpg",
-              "type": "image",
-              "accessibilityText": "se-hatun"
-            },
-            {
-              "subtitle": "",
-              "title": "Gracias por visitar nuestra página web, te esperamos en Hatun Yanuna, la mejor escuela de panadería y pastelería  del centro del país.",
-              "type": "info"
-            }
-          ]
-        ]
-      
-      
-
-    }
-    agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
   }
 
-*/
-//Opción menu opciones
-function ReiniciarConversacion(agent) {
-
-  var payloadData = {
-    "richContent": [
-
-      [
-        {
-          "type": "description",
-          "title": "Selecciona la opción de consulta que te interesa:",
-          "text": [
-          ]
-        }
-      ],
-      [
-        {
-          "type": "chips",
-          "options": [
-            {
-              "text": "Cursos Ofertados",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/yNYjnSW/icono-cursos.png"
-
-                }
-              }
-            },
-            {
-              "text": "Contenidos de aprendizaje",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/87RRscW/aprendizaje.png"
-
-                }
-              }
-            },
-            {
-              "text": "Requisitos",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/Q8687jJ/icono-requisitos.png"
-
-                }
-              }
-            },
-            {
-              "text": "Costos",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/HnRnpzj/icono-costo.png"
-
-                }
-              }
-
-            },
-            {
-              "text": "Duración",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/tmTqdyP/icono-duracion.png"
-                }
-              }
-            },
-            {
-              "text": "Dirección",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/XbfKFw3/icono-direccion.png"
-                }
-              }
-
-            },
-            {
-              "text": "Info de contacto",
-              "image": {
-                "src": {
-                  "rawUrl": "https://i.ibb.co/bbtmt4y/icono-info.png"
-                }
-              }
-            }
-          ]
-        }
-      ]
-
-    ]
-  }
-  agent.add(new dfff.Payload(agent.UNSPECIFIED, payloadData, { sendAsMessage: true, rawPayload: true }))
-}
-  
   //Mapeo de intenciones
 
   let intentMap = new Map();
@@ -1402,7 +1400,7 @@ function ReiniciarConversacion(agent) {
   intentMap.set('MostrarMenuOpciones', MenuOpciones);
 
   intentMap.set('ConsultaFinalizacionConversacion', ConsultaFinConversacion);
-  //intentMap.set('ConsultaFinalizacionConversacion - yes', TerminarConversacion);
+  intentMap.set('ConsultaFinalizacionConversacion - yes', TerminarConversacion);
   intentMap.set('ConsultaFinalizacionConversacion - no', ReiniciarConversacion);
 
   agent.handleRequest(intentMap);
