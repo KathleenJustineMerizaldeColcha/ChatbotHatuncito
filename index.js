@@ -386,10 +386,21 @@ app.post("/", express.json(), (req, res) => {
   function ModuloAvanzado(agent) {
     var payloadData = {
       "richContent": [
+
         [
           {
             "type": "description",
             "title": "Módulo de panadería y pastelería avanzado",
+            "text": [
+              "En este nivel usted obtendrá los conocimientos para desempeñarse en restaurantes, hoteles, cruceros, empresas de alimentación industrial, empresas de banquetes, panaderías o pastelerías. Entre los productos que usted elaborará se encuentran:"
+            ]
+          }
+        ]
+        ,
+        [
+          {
+            "type": "description",
+            "title": "Usted aprenderá:",
             "text": [
               "✅ Panadería tradicional ecuatoriana e internacional",
               "✅ Panes comerciales",
