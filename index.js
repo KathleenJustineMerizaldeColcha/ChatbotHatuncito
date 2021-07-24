@@ -255,7 +255,16 @@ app.post("/", express.json(), (req, res) => {
         [
           {
             "type": "description",
-            "title": "Módulo de panadería y pastelería básica",
+            "title": "Módulo de panadería y pastelería básica:",
+            "text": [
+              "En este nivel usted obtendrá los conocimientos para desempeñarse como ayudante de pastelería y panadería, basado en procesos y técnicas actuales."
+            ]
+          }
+        ],  
+        [
+          {
+            "type": "description",
+            "title": "Usted aprenderá a elaborar:",
             "text": [
               "✅ Tiempos de panes: crocantes, semicrocantes, suaves y enriquecidos",
               "✅ Masas básicas y aireadas",
@@ -390,7 +399,7 @@ app.post("/", express.json(), (req, res) => {
         [
           {
             "type": "description",
-            "title": "Módulo de panadería y pastelería avanzado",
+            "title": "Módulo de panadería y pastelería avanzado:",
             "text": [
               "En este nivel usted obtendrá los conocimientos para desempeñarse en restaurantes, hoteles, cruceros, empresas de alimentación industrial, empresas de banquetes, panaderías o pastelerías."
             ]
@@ -648,7 +657,7 @@ app.post("/", express.json(), (req, res) => {
         [
           {
             "type": "info",
-            "title": "Hatun Yanuna te brinda las mejores opciones de pago para que puedas acceder a nuestras capacitaciones. ¿Deseas conocerlas?",
+            "title": "Hatun Yanuna te brinda las mejores opciones de pago para que puedas acceder a nuestras capacitaciones:",
             "subtitle": "",
             "image": {
               "src": {
@@ -670,7 +679,7 @@ app.post("/", express.json(), (req, res) => {
             "type": "description",
             "title": "Formas de pago:",
             "text": [
-              //"Entendido #Presentacin_Bienvenida-followup.nombre",
+              
               "✅ Efectivo",
               "✅ Transferencias interbancarias",
               "✅ Crédito Directo, mediante un abono de $135 al momento de la inscripción y $85 mensuales por seis meses hasta  completar el valor total, estos valores deben ser cancelados los primeros días de cada mes",
